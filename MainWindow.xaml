@@ -1,0 +1,16 @@
+﻿<Window x:Class="MyLoginPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyLoginPanel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="300">
+    <Grid>
+        <Button x:Name="btn_goToLogin" Content="Mam już konto" HorizontalAlignment="Left" Margin="57,156,0,0" VerticalAlignment="Top" Click="goToLoginWindow"/>
+        <Button x:Name="btn_goToRegister" Content="Chcę założyć konto" HorizontalAlignment="Left" Margin="155,156,0,0" VerticalAlignment="Top" Click="goToRegisterWindow"/>
+        <Label Content="Witaj w serwisie SimplestMedium" HorizontalAlignment="Left" Margin="66,47,0,0" VerticalAlignment="Top"/>
+        <Label Content="Masz już konto czy chcesz założyć nowe?" HorizontalAlignment="Left" Margin="45,94,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

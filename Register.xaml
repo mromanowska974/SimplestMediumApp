@@ -1,0 +1,34 @@
+﻿<Window x:Class="MyLoginPanel.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyLoginPanel"
+        mc:Ignorable="d"
+        Title="Register" Height="450" Width="500">
+    <Grid>
+        <Label Content="E-Mail" HorizontalAlignment="Left" Margin="142,21,0,0" VerticalAlignment="Top"/>
+        <Label Content="Login" HorizontalAlignment="Left" Margin="142,70,0,0" VerticalAlignment="Top"/>
+        <Label Content="Hasło" HorizontalAlignment="Left" Margin="142,114,0,0" VerticalAlignment="Top"/>
+        <Label Content="Powtórz hasło" HorizontalAlignment="Left" Margin="142,158,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radio_female" Content="Kobieta" HorizontalAlignment="Left" Margin="95,233,0,0" VerticalAlignment="Top" GroupName="genderRadio"/>
+        <RadioButton x:Name="radio_male" Content="Mężczyzna" HorizontalAlignment="Left" Margin="185,233,0,0" VerticalAlignment="Top" GroupName="genderRadio"/>
+        <RadioButton x:Name="radio_other" Content="Inne/Wolę nie odpowiadać" HorizontalAlignment="Left" Margin="275,233,0,0" VerticalAlignment="Top" GroupName="genderRadio"/>
+        <Label Content="Płeć" HorizontalAlignment="Left" Margin="142,207,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_register" Content="Zarejestruj" HorizontalAlignment="Center" Margin="0,353,0,0" VerticalAlignment="Top" Click="CreateNewAccount"/>
+        <TextBox x:Name="txt_email" HorizontalAlignment="Left" Margin="142,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_login" HorizontalAlignment="Left" Margin="142,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="txt_password" HorizontalAlignment="Left" Margin="142,140,0,0" VerticalAlignment="Top" Width="120" Password=""/>
+        <PasswordBox x:Name="txt_repeatPassword" HorizontalAlignment="Left" Margin="142,184,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Data urodzin" HorizontalAlignment="Left" Margin="142,253,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dp_birthday" HorizontalAlignment="Left" Margin="142,279,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lb_emailError" Content="" HorizontalAlignment="Left" Margin="275,43,0,0" VerticalAlignment="Top" FontSize="7" Width="196" Height="32"/>
+        <Label x:Name="lb_loginError" Content="" HorizontalAlignment="Left" Margin="275,92,0,0" VerticalAlignment="Top" FontSize="8"/>
+        <Label x:Name="lb_passwordError" Content="" HorizontalAlignment="Left" Margin="275,136,0,0" VerticalAlignment="Top" FontSize="8"/>
+        <Label x:Name="lb_repeatedError" Content="" HorizontalAlignment="Left" Margin="275,180,0,0" VerticalAlignment="Top" FontSize="8"/>
+        <Label x:Name="lb_genderError" Content="" HorizontalAlignment="Left" Margin="275,207,0,0" VerticalAlignment="Top" FontSize="8"/>
+        <Label x:Name="lb_birthdayDateError" Content="" HorizontalAlignment="Left" Margin="275,277,0,0" VerticalAlignment="Top" FontSize="8"/>
+        <Label x:Name="lb_registeredSuccessfully" Content="" HorizontalAlignment="Left" Margin="95,381,0,0" VerticalAlignment="Top" Width="315" FontSize="10"/>
+
+    </Grid>
+</Window>
