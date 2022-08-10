@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace MyLoginPanel.DB
 {
-    public class DbContext
+    public class MyDbContext: DbContext
     {
-        DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
+        public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
     }
 }

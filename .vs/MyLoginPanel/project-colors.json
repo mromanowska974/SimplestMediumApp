@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "173cd717-4ea3-4bb6-a050-ca9cd4917398": {
+      "ProjectGuid": "173cd717-4ea3-4bb6-a050-ca9cd4917398",
+      "DisplayName": "MyLoginPanel",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Różne pliki",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -1,4 +1,5 @@
-﻿using MyLoginPanel.DB;
+﻿using Microsoft.EntityFrameworkCore;
+using MyLoginPanel.DB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,8 @@ namespace MyLoginPanel
 
         private void CreateNewAccount(object sender, RoutedEventArgs e)
         {
+            var options = new DbContextOptionsBuilder<MyDbContext>()
+                .UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=SimplestMediumDB;Trusted_Connection=True;").Options;
             /* WALIDACJA */
             bool canBeRegistered = true;
 
@@ -77,7 +80,7 @@ namespace MyLoginPanel
             }
             else lb_repeatedError.Content = "";
 
-            //5. Walidacja podania płci i daty
+            //5. Walidacja podania płci
             if (radio_female.IsChecked == false && radio_male.IsChecked == false && radio_other.IsChecked == false)
             {
                 lb_genderError.Content = "Proszę wybrać płeć.";
@@ -85,6 +88,7 @@ namespace MyLoginPanel
             }
             else lb_genderError.Content = "";
 
+            //6. Walidacja wieku
             if (dp_birthday.ToString().Equals(""))
             {
                 lb_birthdayDateError.Content = "Proszę podać datę urodzenia.";
@@ -92,10 +96,38 @@ namespace MyLoginPanel
             }
             else lb_birthdayDateError.Content = "";
 
+            //7. Walidacja unikalności loginu i e-maila
+            using(var db = new MyDbContext(options))
+            {
+                List<string> allEmails = new List<string>();
+                allEmails = db.Users.Select(x => x.Email).ToList();
+                if (allEmails.Contains(txt_email.Text)) lb_emailError.Content = "Podany e-mail istnieje w bazie. Proszę podać inny e-mail.";
+
+                List<string> allLogins = new List<string>();
+                allLogins = db.Users.Select(x => x.Login).ToList();
+                if (allLogins.Contains(txt_login.Text)) lb_loginError.Content = "Podany login istnieje w bazie. Proszę podać inny login.";
+            }
+
             /* ŁĄCZENIE Z BAZĄ I TWORZENIE NOWEGO UŻYTKOWNIKA */
             if (canBeRegistered)
             {
-                lb_registeredSuccessfully.Content = "Gdy powstanie baza, użytkownik zostanie pomyślnie zalogowany.";
+                User user = new User();
+                user.Email = txt_email.Text;
+                user.Login = txt_login.Text;
+                user.Password = txt_password.Password;
+                user.BirthDate = dp_birthday.ToString();
+                if (radio_female.IsChecked == true) user.Gender = "Female";
+                else if (radio_male.IsChecked == true) user.Gender = "Male";
+                else user.Gender = "Other/not mentioned";
+
+                using(var db = new MyDbContext(options))
+                {
+                    db.Database.EnsureCreated();
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                }
+
+                lb_registeredSuccessfully.Content = $"Użytkownik {user.Login} został pomyślnie zalogowany.";
             }
         }
     }
