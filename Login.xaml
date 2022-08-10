@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyLoginPanel"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800">
+        Title="Login" Height="400" Width="400">
     <Grid>
-        
+        <Label x:Name="lb_welcomeMessage" Content="" HorizontalAlignment="Center" Margin="0,71,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="360" Height="52" FontSize="10"/>
+        <Label Content="Login/E-mail" HorizontalAlignment="Left" Margin="147,139,0,0" VerticalAlignment="Top"/>
+        <Label Content="Hasło" HorizontalAlignment="Left" Margin="147,183,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_loginOrEmail" HorizontalAlignment="Left" Margin="147,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="txt_password" HorizontalAlignment="Left" Margin="147,209,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btn_login" Content="Zaloguj się" HorizontalAlignment="Left" Margin="176,267,0,0" VerticalAlignment="Top" Click="LoginToService"/>
+        <Label x:Name="lb_LoginError" Content="" HorizontalAlignment="Left" Margin="41,316,0,0" VerticalAlignment="Top" Width="329" FontSize="10"/>
+
     </Grid>
 </Window>

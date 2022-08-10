@@ -127,7 +127,8 @@ namespace MyLoginPanel
                     db.SaveChanges();
                 }
 
-                lb_registeredSuccessfully.Content = $"Użytkownik {user.Login} został pomyślnie zalogowany.";
+                Login login = new Login("Dziękujemy za zarejestrowanie.\n Teraz możesz się zarejestrować w serwisie SimplestMedium.");
+                login.Show();
             }
         }
     }

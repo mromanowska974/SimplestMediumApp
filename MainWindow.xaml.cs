@@ -27,7 +27,7 @@ namespace MyLoginPanel
 
         private void goToLoginWindow(object sender, RoutedEventArgs e)
         {
-            Login login = new Login();
+            Login login = new Login("Witamy ponownie drogi użytkowniku. Zaloguj się w serwisie SimplestMedium.");
             login.Show();
         }
 

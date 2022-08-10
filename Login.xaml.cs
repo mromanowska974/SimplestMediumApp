@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using MyLoginPanel.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,47 @@ namespace MyLoginPanel
         public Login()
         {
             InitializeComponent();
+        }
+
+        public Login(string message)
+        {
+            InitializeComponent();
+            lb_welcomeMessage.Content = message;
+        }
+
+        private void LoginToService(object sender, RoutedEventArgs e)
+        {
+            var options = new DbContextOptionsBuilder<MyDbContext>()
+                .UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=SimplestMediumDB;Trusted_Connection=True;").Options;
+
+            string loginOrEmail = txt_loginOrEmail.Text;
+
+            using(var db = new MyDbContext(options))
+            {
+                List<string> allLogins = new List<string>();
+                List<string> allEmails = new List<string>();
+                allEmails = db.Users.Select(x => x.Email).ToList();
+                allLogins = db.Users.Select(x => x.Login).ToList();
+
+                if(!allEmails.Contains(loginOrEmail) && !allLogins.Contains(loginOrEmail))
+                {
+                    lb_LoginError.Content = "Użytkownik o podanym e-mailu lub loginie nie istnieje w bazie.";
+                }
+                else
+                {
+                    User user = new User();
+                    user = db.Users.FirstOrDefault(x => x.Email == loginOrEmail || x.Login == loginOrEmail);
+
+                    if(user.Password != txt_password.Password)
+                    {
+                        lb_LoginError.Content = "Podano nieprawidłowe hasło. Proszę podać inne hasło.";
+                    }
+                    else
+                    {
+                        lb_LoginError.Content = "Użytkownik zostanie zalogowany gdy portal zostanie utworzony.";
+                    }
+                }
+            }
         }
     }
 }
