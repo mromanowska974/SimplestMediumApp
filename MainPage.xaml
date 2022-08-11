@@ -1,0 +1,17 @@
+﻿<Window x:Class="MyLoginPanel.MainPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyLoginPanel"
+        mc:Ignorable="d"
+        Title="MainPage" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="lb_welcomeMessage" Content="" HorizontalAlignment="Left" Margin="21,102,0,0" VerticalAlignment="Top" Width="754"/>
+        <Menu Margin="0,0,0,404">
+            <Button x:Name="btn_profile" Content="Zobacz profil" Click="goToProfile"/>
+            <Button x:Name="btn_logOut" Content="Wyloguj się" HorizontalAlignment="Left" VerticalAlignment="Top" Click="logOut"/>
+        </Menu>
+
+    </Grid>
+</Window>

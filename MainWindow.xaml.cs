@@ -29,12 +29,14 @@ namespace MyLoginPanel
         {
             Login login = new Login("Witamy ponownie drogi użytkowniku. Zaloguj się w serwisie SimplestMedium.");
             login.Show();
+            this.Close();
         }
 
         private void goToRegisterWindow(object sender, RoutedEventArgs e)
         {
             Register register = new Register();
             register.Show();
+            this.Close ();
         }
     }
 }

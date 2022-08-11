@@ -112,3 +112,7 @@ C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestM
 C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\ref\MyLoginPanel.dll
 C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\MyLoginPanel.pdb
 C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\MyLoginPanel.genruntimeconfig.cache
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\MainPage.g.cs
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\MainPage.baml
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\Profile.g.cs
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\Profile.baml

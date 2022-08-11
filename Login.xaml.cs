@@ -61,7 +61,9 @@ namespace MyLoginPanel
                     }
                     else
                     {
-                        lb_LoginError.Content = "Użytkownik zostanie zalogowany gdy portal zostanie utworzony.";
+                        MainPage mp = new MainPage(user);
+                        mp.Show();
+                        this.Close();
                     }
                 }
             }

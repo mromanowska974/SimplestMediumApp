@@ -129,6 +129,7 @@ namespace MyLoginPanel
 
                 Login login = new Login("Dziękujemy za zarejestrowanie.\n Teraz możesz się zarejestrować w serwisie SimplestMedium.");
                 login.Show();
+                this.Close();
             }
         }
     }

@@ -7,10 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="300">
     <Grid>
-        <Button x:Name="btn_goToLogin" Content="Mam już konto" HorizontalAlignment="Left" Margin="57,156,0,0" VerticalAlignment="Top" Click="goToLoginWindow"/>
-        <Button x:Name="btn_goToRegister" Content="Chcę założyć konto" HorizontalAlignment="Left" Margin="155,156,0,0" VerticalAlignment="Top" Click="goToRegisterWindow"/>
-        <Label Content="Witaj w serwisie SimplestMedium" HorizontalAlignment="Left" Margin="66,47,0,0" VerticalAlignment="Top"/>
-        <Label Content="Masz już konto czy chcesz założyć nowe?" HorizontalAlignment="Left" Margin="45,94,0,0" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="263*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btn_goToLogin" Content="Mam już konto" HorizontalAlignment="Left" Margin="20,156,0,0" VerticalAlignment="Top" Click="goToLoginWindow" Grid.Column="1"/>
+        <Button x:Name="btn_goToRegister" Content="Chcę założyć konto" HorizontalAlignment="Left" Margin="118,156,0,0" VerticalAlignment="Top" Click="goToRegisterWindow" Grid.Column="1"/>
+        <Label Content="Witaj w serwisie SimplestMedium" HorizontalAlignment="Left" Margin="29,47,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Masz już konto czy chcesz założyć nowe?" HorizontalAlignment="Left" Margin="8,94,0,0" VerticalAlignment="Top" Grid.Column="1"/>
 
     </Grid>
 </Window>
