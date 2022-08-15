@@ -5,24 +5,156 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyLoginPanel"
         mc:Ignorable="d"
-        Title="Profile" Height="450" Width="450">
+        Title="Profile" Height="450" Width="450" MinHeight="450" MinWidth="450">
     <Grid>
-        <Label x:Name="lb_userDataIntroduction" Content="" HorizontalAlignment="Center" Margin="0,41,0,0" VerticalAlignment="Top" Width="370"/>
-        <Label Content="E-mail" HorizontalAlignment="Left" Margin="78,95,0,0" VerticalAlignment="Top"/>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="78,126,0,0" VerticalAlignment="Top"/>
-        <Label Content="Płeć" HorizontalAlignment="Left" Margin="78,157,0,0" VerticalAlignment="Top"/>
-        <Label Content="Data urodzenia" HorizontalAlignment="Left" Margin="78,188,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lb_emailInfo" Content="" HorizontalAlignment="Left" Margin="121,95,0,0" VerticalAlignment="Top" Width="160" HorizontalContentAlignment="Right"/>
-        <Label x:Name="lb_loginInfo" Content="" HorizontalAlignment="Left" Margin="121,126,0,0" VerticalAlignment="Top" Width="160" HorizontalContentAlignment="Right"/>
-        <Label x:Name="lb_genderInfo" Content="" HorizontalAlignment="Left" Margin="121,157,0,0" VerticalAlignment="Top" Width="160" HorizontalContentAlignment="Right"/>
-        <Label x:Name="lb_birthDateInfo" Content="" HorizontalAlignment="Left" Margin="174,188,0,0" VerticalAlignment="Top" Width="107" HorizontalContentAlignment="Right"/>
-        <Button x:Name="btn_changeEmail" Content="Zmień e-mail" HorizontalAlignment="Left" Margin="286,98,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_changeLogin" Content="Zmień login" HorizontalAlignment="Left" Margin="286,129,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_changeGender" Content="Zmień płeć" HorizontalAlignment="Left" Margin="286,160,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="286,191,0,0" VerticalAlignment="Top"/>
-        <Label Content="Hasło" HorizontalAlignment="Left" Margin="77,217,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_changePassword" Content="Zmień hasło" HorizontalAlignment="Left" Margin="286,220,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_mainPage" Content="Wróć na stronę główną" HorizontalAlignment="Left" Margin="169,300,0,0" VerticalAlignment="Top" Click="backToMainPage"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Viewbox Grid.Row="0">
+                <Label x:Name="lb_userDataIntroduction" Content="" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                />
+            </Viewbox>
+            <Viewbox Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="E-mail" HorizontalAlignment="Left" 
+                           VerticalAlignment="Center" Grid.Column="0"
+                           Margin="0 0 31 0"
+                    />
+                    <Label x:Name="lb_emailInfo" Content="" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           HorizontalContentAlignment="Right" Grid.Column="1"
+                           Width="150"
+                    />
+                    <Button x:Name="btn_changeEmail" Content="Zmień" 
+                            HorizontalAlignment="Left" VerticalAlignment="Center"
+                            Grid.Column="2"
+                    />
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Login" HorizontalAlignment="Left" 
+                           VerticalAlignment="Center" Grid.Column="0"
+                           Margin="0 0 35 0"
+                    />
+                    <Label x:Name="lb_loginInfo" Content="" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           HorizontalContentAlignment="Right" Grid.Column="1"
+                           Width="150"
+                    />
+                    <Button x:Name="btn_changeLogin" Content="Zmień" 
+                            HorizontalAlignment="Right" VerticalAlignment="Center"
+                            Grid.Column="2"
+                    />
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Płeć" HorizontalAlignment="Left"
+                           VerticalAlignment="Center" Grid.Column="0"
+                           Margin="0 0 42 0"
+                    />
+                    <Label x:Name="lb_genderInfo" Content="" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           HorizontalContentAlignment="Right" Grid.Column="1"
+                           Width="150"
+                    />
+                    <Button x:Name="btn_changeGender" Content="Zmień" 
+                            HorizontalAlignment="Right" VerticalAlignment="Center"
+                            Grid.Column="2"
+                    />
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="4">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Data urodzenia" HorizontalAlignment="Left" 
+                           VerticalAlignment="Center" Grid.Column="0"
+                           Height="29" FontSize="13.5"
+                    />
+                    <Label x:Name="lb_birthDateInfo" Content="" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           HorizontalContentAlignment="Right" Grid.Column="1"
+                           Width="150"
+                    />
+                    <Button Content="Zmień" HorizontalAlignment="Right"
+                            VerticalAlignment="Center" Grid.Column="2"
+                            Height="24" FontSize="13.5"
+                    />
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Hasło" HorizontalAlignment="Left"
+                           VerticalAlignment="Center" Grid.Column="0"
+                           Margin="0 0 34 0"
+                    />
+                    <Label Grid.Column="1" Width="150"/>
+                    <Button x:Name="btn_changePassword" Content="Zmień" 
+                            HorizontalAlignment="Right" VerticalAlignment="Center"
+                            Grid.Column="2"
+                    />
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="6">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btn_mainPage" Content="Wróć na stronę główną" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" 
+                            Click="backToMainPage" Grid.Column="0" Margin="20"
+                    />
+                    <Button Content="Usuń konto" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Grid.Column="1" Margin="10"
+                    />
+                </Grid>
+            </Viewbox>
+        </Grid>
 
     </Grid>
 </Window>

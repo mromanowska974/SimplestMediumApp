@@ -5,30 +5,202 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyLoginPanel"
         mc:Ignorable="d"
-        Title="Register" Height="450" Width="500">
+        Title="Register" MinHeight="500" MinWidth="500" Width="500" Height="500">
     <Grid>
-        <Label Content="E-Mail" HorizontalAlignment="Left" Margin="142,21,0,0" VerticalAlignment="Top"/>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="142,70,0,0" VerticalAlignment="Top"/>
-        <Label Content="Hasło" HorizontalAlignment="Left" Margin="142,114,0,0" VerticalAlignment="Top"/>
-        <Label Content="Powtórz hasło" HorizontalAlignment="Left" Margin="142,158,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="radio_female" Content="Kobieta" HorizontalAlignment="Left" Margin="95,233,0,0" VerticalAlignment="Top" GroupName="genderRadio"/>
-        <RadioButton x:Name="radio_male" Content="Mężczyzna" HorizontalAlignment="Left" Margin="185,233,0,0" VerticalAlignment="Top" GroupName="genderRadio"/>
-        <RadioButton x:Name="radio_other" Content="Inne/Wolę nie odpowiadać" HorizontalAlignment="Left" Margin="275,233,0,0" VerticalAlignment="Top" GroupName="genderRadio"/>
-        <Label Content="Płeć" HorizontalAlignment="Left" Margin="142,207,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_register" Content="Zarejestruj" HorizontalAlignment="Center" Margin="0,353,0,0" VerticalAlignment="Top" Click="CreateNewAccount"/>
-        <TextBox x:Name="txt_email" HorizontalAlignment="Left" Margin="142,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txt_login" HorizontalAlignment="Left" Margin="142,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="txt_password" HorizontalAlignment="Left" Margin="142,140,0,0" VerticalAlignment="Top" Width="120" Password=""/>
-        <PasswordBox x:Name="txt_repeatPassword" HorizontalAlignment="Left" Margin="142,184,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Data urodzin" HorizontalAlignment="Left" Margin="142,253,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="dp_birthday" HorizontalAlignment="Left" Margin="142,279,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lb_emailError" Content="" HorizontalAlignment="Left" Margin="275,43,0,0" VerticalAlignment="Top" FontSize="7" Width="196" Height="32"/>
-        <Label x:Name="lb_loginError" Content="" HorizontalAlignment="Left" Margin="275,92,0,0" VerticalAlignment="Top" FontSize="8"/>
-        <Label x:Name="lb_passwordError" Content="" HorizontalAlignment="Left" Margin="275,136,0,0" VerticalAlignment="Top" FontSize="8"/>
-        <Label x:Name="lb_repeatedError" Content="" HorizontalAlignment="Left" Margin="275,180,0,0" VerticalAlignment="Top" FontSize="8"/>
-        <Label x:Name="lb_genderError" Content="" HorizontalAlignment="Left" Margin="275,207,0,0" VerticalAlignment="Top" FontSize="8"/>
-        <Label x:Name="lb_birthdayDateError" Content="" HorizontalAlignment="Left" Margin="275,277,0,0" VerticalAlignment="Top" FontSize="8"/>
-        <Label x:Name="lb_registeredSuccessfully" Content="" HorizontalAlignment="Left" Margin="95,381,0,0" VerticalAlignment="Top" Width="315" FontSize="10"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <Viewbox Grid.Row="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label 
+                        Content="E-Mail" HorizontalAlignment="Left" 
+                        VerticalAlignment="Center"
+                        Margin="0 0 50 0"
+                    />
+                    <TextBox x:Name="txt_email" 
+                             HorizontalAlignment="Right"
+                             TextWrapping="Wrap" VerticalAlignment="Center" 
+                             Width="120" Grid.Column="1" Height="18"
+                    />
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="1">
+                <Label x:Name="lb_emailError" Content="" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="100"  Foreground="Red"
+                />
+            </Viewbox>
+            <Viewbox Grid.Row="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Login" HorizontalAlignment="Left" 
+                           VerticalAlignment="Center" Grid.Column="0"
+                           Margin="0 0 55 0"
+                    />
+                    <TextBox x:Name="txt_login" 
+                             HorizontalAlignment="Right" TextWrapping="Wrap" 
+                             VerticalAlignment="Center" Grid.Column="1"
+                             Width="120" Height="18"
+                    />
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="3">
+                <Label x:Name="lb_loginError" Content="" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="100" Foreground="Red"
+                />
+            </Viewbox>
+            <Viewbox Grid.Row="4">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label 
+                        Content="Hasło" HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" Grid.Column="0"
+                        Margin="0 0 55 0"
+                    />
+                    <PasswordBox x:Name="txt_password" 
+                                 HorizontalAlignment="Right"
+                                 VerticalAlignment="Center" 
+                                 Width="120" Password=""
+                                 Grid.Column="1"
+                    />
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="5">
+                <Label x:Name="lb_passwordError" Content="" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="100" Foreground="Red"/>
+            </Viewbox>
+            <Viewbox Grid.Row="6">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label 
+                        Content="Powtórz hasło" HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" Grid.Column="0"
+                        Margin="0 0 10 0"
+                    />
+                    <PasswordBox x:Name="txt_repeatPassword" 
+                                 HorizontalAlignment="Right" VerticalAlignment="Center" 
+                                 Width="120" Grid.Column="1"
+                    />
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="7">
+                <Label x:Name="lb_repeatedError" Content="" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="100" Foreground="Red"
+                />
+            </Viewbox>
+            <Viewbox Grid.Row="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Płeć" HorizontalAlignment="Left"
+                           VerticalAlignment="Center" Margin="0 0 185 0"
+                    />
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="9">
+                <Grid Width="300" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton x:Name="radio_female" 
+                                 Content="Kobieta" HorizontalAlignment="Center" 
+                                 VerticalAlignment="Center" FontSize="10"
+                                 GroupName="genderRadio" Grid.Column="0"
+                    />
+                    <RadioButton x:Name="radio_male" FontSize="10"
+                                 Content="Mężczyzna" HorizontalAlignment="Center" 
+                                 VerticalAlignment="Center" GroupName="genderRadio"
+                                 Grid.Column="1"
+                    />
+                    <RadioButton x:Name="radio_other" FontSize="10"
+                                 Content="Inne/Wolę nie odpowiadać" 
+                                 HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                 GroupName="genderRadio" Grid.Column="2" 
+                    />
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="10">
+                <Label x:Name="lb_genderError" Content="" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="100" Foreground="Red"
+                />
+            </Viewbox>
+            <Viewbox Grid.Row="11">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label 
+                        Content="Data urodzin" HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" Grid.Column="0"
+                        Margin="0 0 30 0"
+                    />
+                    <DatePicker x:Name="dp_birthday" 
+                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                Grid.Column="1"
+                    />
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="12">
+                <Label x:Name="lb_birthdayDateError" Content="" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="100" Foreground="Red"
+                />
+            </Viewbox>
+            <Viewbox Grid.Row="13">
+                <Button x:Name="btn_register" 
+                        Content="Zarejestruj" HorizontalAlignment="Center" 
+                        VerticalAlignment="Top" Click="CreateNewAccount"
+                />
+            </Viewbox>
+        </Grid>
 
     </Grid>
 </Window>

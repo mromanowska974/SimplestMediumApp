@@ -5,15 +5,91 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyLoginPanel"
         mc:Ignorable="d"
-        Title="Login" Height="400" Width="400">
+        Title="Login" MinHeight="400" MinWidth="400" Height="400" Width="400">
     <Grid>
-        <Label x:Name="lb_welcomeMessage" Content="" HorizontalAlignment="Center" Margin="0,71,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="360" Height="52" FontSize="10"/>
-        <Label Content="Login/E-mail" HorizontalAlignment="Left" Margin="147,139,0,0" VerticalAlignment="Top"/>
-        <Label Content="Hasło" HorizontalAlignment="Left" Margin="147,183,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_loginOrEmail" HorizontalAlignment="Left" Margin="147,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="txt_password" HorizontalAlignment="Left" Margin="147,209,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btn_login" Content="Zaloguj się" HorizontalAlignment="Left" Margin="176,267,0,0" VerticalAlignment="Top" Click="LoginToService"/>
-        <Label x:Name="lb_LoginError" Content="" HorizontalAlignment="Left" Margin="41,316,0,0" VerticalAlignment="Top" Width="329" FontSize="10"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Viewbox Grid.Row="0">
+                <Label x:Name="lb_welcomeMessage" Content="" 
+                       HorizontalAlignment="Center" VerticalAlignment="Top" 
+                       VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                />
+            </Viewbox>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Viewbox Grid.Row="1" Grid.Column="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label 
+                            Content="Login/E-mail" HorizontalAlignment="Left" 
+                            VerticalAlignment="Center" Grid.Row="0"
+                        />
+                        <TextBox x:Name="txt_loginOrEmail" 
+                                 HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                 VerticalAlignment="Top" Width="120"
+                                 Grid.Row="1"
+                        />
+                        <Label 
+                            Content="Hasło" HorizontalAlignment="Left" 
+                            VerticalAlignment="Center" Grid.Row="2"
+                        />
+                        <PasswordBox x:Name="txt_password" 
+                                     HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                     Width="120" Grid.Row="3"
+                        />
+                    </Grid>
+                </Viewbox>
+            </Grid>
+            <Viewbox Grid.Row="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btn_login" Content="Zaloguj się" 
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Click="LoginToService"
+                            Grid.Row="0"
+                    />
+                    <Label x:Name="lb_LoginError" Content="" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           Foreground="Red" FontSize="5"
+                           Grid.Row="1"
+                    />
+                </Grid>
+            </Viewbox>
+        </Grid>
 
     </Grid>
 </Window>

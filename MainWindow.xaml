@@ -5,16 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyLoginPanel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="300">
+        Title="MainWindow" Height="300" Width="300"
+        MinHeight="300" MinWidth="300">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="37*"/>
-            <ColumnDefinition Width="263*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btn_goToLogin" Content="Mam już konto" HorizontalAlignment="Left" Margin="20,156,0,0" VerticalAlignment="Top" Click="goToLoginWindow" Grid.Column="1"/>
-        <Button x:Name="btn_goToRegister" Content="Chcę założyć konto" HorizontalAlignment="Left" Margin="118,156,0,0" VerticalAlignment="Top" Click="goToRegisterWindow" Grid.Column="1"/>
-        <Label Content="Witaj w serwisie SimplestMedium" HorizontalAlignment="Left" Margin="29,47,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label Content="Masz już konto czy chcesz założyć nowe?" HorizontalAlignment="Left" Margin="8,94,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0"></Label>
+        <Label Grid.Row="2" Grid.Column="2"></Label>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Viewbox Grid.Row="0">
+                <Label 
+                    Content="Witaj w serwisie SimplestMedium" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                />
+            </Viewbox>
+            <Viewbox Grid.Row="1">
+                <Label 
+                    Content="Masz już konto czy chcesz założyć nowe?" 
+                    HorizontalAlignment="Center" Margin="8,0,0,0" VerticalAlignment="Center" 
+                />
+            </Viewbox>
+            <Viewbox Grid.Row="3">
+                <Button 
+                    x:Name="btn_goToLogin" Content="Mam już konto" 
+                    HorizontalAlignment="Center"  VerticalAlignment="Center" 
+                    Margin="10"
+                    Click="goToLoginWindow"
+                />
+            </Viewbox>
+            <Viewbox Grid.Row="4">
+                <Button 
+                    x:Name="btn_goToRegister" Content="Chcę założyć konto" 
+                    HorizontalAlignment="Center"  VerticalAlignment="Center" 
+                    Margin="15"
+                    Click="goToRegisterWindow"
+                />
+            </Viewbox>
+        </Grid>
 
     </Grid>
 </Window>
