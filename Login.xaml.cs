@@ -21,15 +21,12 @@ namespace MyLoginPanel
     /// </summary>
     public partial class Login : Window
     {
-        public Login()
-        {
-            InitializeComponent();
-        }
-
-        public Login(string message)
+        public Login(string message, double width, double height)
         {
             InitializeComponent();
             lb_welcomeMessage.Content = message;
+            this.Width = width;
+            this.Height = height;
         }
 
         private void LoginToService(object sender, RoutedEventArgs e)
@@ -48,7 +45,7 @@ namespace MyLoginPanel
 
                 if(!allEmails.Contains(loginOrEmail) && !allLogins.Contains(loginOrEmail))
                 {
-                    lb_LoginError.Content = "Użytkownik o podanym e-mailu lub loginie nie istnieje w bazie.";
+                    lb_LoginError.Content = "Użytkownik o podanym e-mailu lub loginie nie istnieje.";
                 }
                 else
                 {

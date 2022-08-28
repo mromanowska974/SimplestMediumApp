@@ -27,14 +27,14 @@ namespace MyLoginPanel
 
         private void goToLoginWindow(object sender, RoutedEventArgs e)
         {
-            Login login = new Login("Witamy ponownie drogi użytkowniku. \nZaloguj się w serwisie SimplestMedium.");
+            Login login = new Login("Witamy ponownie drogi użytkowniku. \nZaloguj się w serwisie SimplestMedium.", this.ActualWidth, this.ActualHeight);
             login.Show();
             this.Close();
         }
 
         private void goToRegisterWindow(object sender, RoutedEventArgs e)
         {
-            Register register = new Register();
+            Register register = new Register(this.ActualWidth, this.ActualHeight);
             register.Show();
             this.Close ();
         }

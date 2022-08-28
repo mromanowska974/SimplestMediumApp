@@ -77,7 +77,7 @@ namespace MyLoginPanel {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MyLoginPanel;component/mainpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MyLoginPanel;V1.0.0.0;component/mainpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\MainPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

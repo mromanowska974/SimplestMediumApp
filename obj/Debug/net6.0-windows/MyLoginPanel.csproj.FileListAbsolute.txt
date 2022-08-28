@@ -116,3 +116,13 @@ C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestM
 C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\MainPage.baml
 C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\Profile.g.cs
 C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\Profile.baml
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\ChangeData.g.cs
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\ChangeData.baml
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\Confirm.g.cs
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\Confirm.baml
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\ChangeBirthDate.g.cs
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\ChangeGender.g.cs
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\ChangePassword.g.cs
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\ChangeBirthDate.baml
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\ChangeGender.baml
+C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\obj\Debug\net6.0-windows\ChangePassword.baml

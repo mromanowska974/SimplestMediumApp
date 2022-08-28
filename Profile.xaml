@@ -51,7 +51,7 @@
                     />
                     <Button x:Name="btn_changeEmail" Content="Zmień" 
                             HorizontalAlignment="Left" VerticalAlignment="Center"
-                            Grid.Column="2"
+                            Grid.Column="2" Click="changeEmailOrLogin"
                     />
                 </Grid>
             </Viewbox>
@@ -73,7 +73,7 @@
                     />
                     <Button x:Name="btn_changeLogin" Content="Zmień" 
                             HorizontalAlignment="Right" VerticalAlignment="Center"
-                            Grid.Column="2"
+                            Grid.Column="2" Click="changeEmailOrLogin"
                     />
                 </Grid>
             </Viewbox>
@@ -95,7 +95,7 @@
                     />
                     <Button x:Name="btn_changeGender" Content="Zmień" 
                             HorizontalAlignment="Right" VerticalAlignment="Center"
-                            Grid.Column="2"
+                            Grid.Column="2" Click="changeGender"
                     />
                 </Grid>
             </Viewbox>
@@ -115,9 +115,9 @@
                            HorizontalContentAlignment="Right" Grid.Column="1"
                            Width="150"
                     />
-                    <Button Content="Zmień" HorizontalAlignment="Right"
+                    <Button x:Name="btn_changeBirthDate" Content="Zmień" HorizontalAlignment="Right"
                             VerticalAlignment="Center" Grid.Column="2"
-                            Height="24" FontSize="13.5"
+                            Height="24" FontSize="13.5" Click="changeBirthDate"
                     />
                 </Grid>
             </Viewbox>
@@ -135,7 +135,7 @@
                     <Label Grid.Column="1" Width="150"/>
                     <Button x:Name="btn_changePassword" Content="Zmień" 
                             HorizontalAlignment="Right" VerticalAlignment="Center"
-                            Grid.Column="2"
+                            Grid.Column="2" Click="changePassword"
                     />
                 </Grid>
             </Viewbox>
@@ -149,8 +149,8 @@
                             HorizontalAlignment="Center" VerticalAlignment="Center" 
                             Click="backToMainPage" Grid.Column="0" Margin="20"
                     />
-                    <Button Content="Usuń konto" HorizontalAlignment="Center"
-                            VerticalAlignment="Center" Grid.Column="1" Margin="10"
+                    <Button x:Name="btn_deleteAccount" Content="Usuń konto" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Grid.Column="1" Margin="10" Click="deleteAccount"
                     />
                 </Grid>
             </Viewbox>
