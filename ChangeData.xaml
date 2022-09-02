@@ -18,33 +18,8 @@
             <RowDefinition Height="8*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Label x:Name="lb_info" Grid.Row="0"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Bottom"
-                   HorizontalContentAlignment="Center"
-            />
-            <TextBox x:Name="txt_newData" Grid.Row="1" Margin="10"
-                     Width="300"
-            />
-            <Grid Grid.Row="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Button x:Name="btn_save" Grid.Row="0" Content="Zapisz"
-                        Click="saveChanges" Width="50"
-                />
-                <Label x:Name="lb_errorInfo"  Grid.Row="1" 
-                       Foreground="Red" HorizontalAlignment="Center"
-                       VerticalAlignment="Center" FontSize="10"
-                />
-            </Grid>
-        </Grid>
+        <Frame x:Name="Main" Grid.Column="1" Grid.Row="1"
+               NavigationUIVisibility="Hidden"
+        />
     </Grid>
 </Window>

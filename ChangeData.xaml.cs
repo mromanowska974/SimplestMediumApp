@@ -21,37 +21,34 @@ namespace MyLoginPanel
     /// </summary>
     public partial class ChangeData : Window
     {
-        User currentlyLoggedUser;
-        string state;
-        Profile profile;
-        public ChangeData(User user, string info, string state, Profile profile)
+        Window parentWindow;
+        public ChangeData(User user, string info, string state, Window window)
         {
             InitializeComponent();
-            currentlyLoggedUser = user;
-            this.state = state;
-            lb_info.Content = info;
-            this.profile = profile;
+            parentWindow = window;
+            Main.Content = new ChangeLoginOrEmail(user, info, state, Main, this, parentWindow);            
         }
 
-        private void saveChanges(object sender, RoutedEventArgs e)
+        public ChangeData(User user, string state, Window window)
         {
-            bool canBeChanged = true;
-
-            if (state.Equals("btn_changeEmail"))
+            InitializeComponent();
+            parentWindow = window;
+            if (state == "btn_changePassword")
             {
-                canBeChanged = Validate.Email(txt_newData, lb_errorInfo);
+                this.Height = 300;
+                Main.Content = new ChangePassword(user, state, Main, this, parentWindow);
             }
-            else if (state.Equals("btn_changeLogin"))
+            else if (state == "btn_changeGender")
             {
-                canBeChanged = Validate.Login(txt_newData, lb_errorInfo);
+                this.Height = 250;
+                Main.Content = new ChangeGender(user, state, Main, this, parentWindow);
             }
-
-            if (canBeChanged)
+            else if (state == "btn_changeBirthDate")
             {
-                Confirm confirm = new Confirm(currentlyLoggedUser, state, txt_newData.Text, profile);
-                confirm.Show();
-                this.Close();
+                this.Width = 300;
+                Main.Content = new ChangeBirthDate(user, state, Main, this, parentWindow);
             }
+            else if (state == "btn_deleteAccount") Main.Content = new ConfirmPage(user, state, this, parentWindow);
         }
     }
 }

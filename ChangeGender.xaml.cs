@@ -15,20 +15,21 @@ using System.Windows.Shapes;
 
 namespace MyLoginPanel
 {
-    /// <summary>
-    /// Logika interakcji dla klasy ChangeGender.xaml
-    /// </summary>
-    public partial class ChangeGender : Window
+    public partial class ChangeGender : Page
     {
         User currentlyLoggedUser;
         string state;
-        Profile profile;
-        public ChangeGender(User user, string state, Profile profile)
+        Frame rootFrame;
+        Window rootWindow;
+        Window parentWindow;
+        public ChangeGender(User user, string state, Frame frame, Window window, Window window2)
         {
             InitializeComponent();
             currentlyLoggedUser = user;
             this.state = state;
-            this.profile = profile;
+            rootFrame = frame;
+            rootWindow = window;
+            parentWindow = window2;
         }
 
         private void saveChanges(object sender, RoutedEventArgs e)
@@ -48,9 +49,7 @@ namespace MyLoginPanel
                 else if (radio_male.IsChecked == true) newData = "Male";
                 else if (radio_other.IsChecked == true) newData = "Other/Not mentioned";
 
-                Confirm c = new Confirm(currentlyLoggedUser, state, newData, profile);
-                c.Show();
-                this.Close();
+                rootFrame.Content = new ConfirmPage(currentlyLoggedUser, state, newData, rootWindow, parentWindow);
             }
         }
     }

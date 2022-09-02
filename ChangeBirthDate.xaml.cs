@@ -15,31 +15,42 @@ using System.Windows.Shapes;
 
 namespace MyLoginPanel
 {
-    /// <summary>
-    /// Logika interakcji dla klasy ChangeBirthDate.xaml
-    /// </summary>
-    public partial class ChangeBirthDate : Window
+    public partial class ChangeBirthDate : Page
     {
         User currentlyLoggedUser;
         string state;
-        Profile profile;
-        public ChangeBirthDate(User user, string state, Profile profile)
+        int counter;
+        Frame rootFrame;
+        Window rootWindow;
+        Window parentWindow;
+        public ChangeBirthDate(User user, string state, Frame frame, Window window, Window window2)
         {
             InitializeComponent();
             currentlyLoggedUser = user;
             this.state = state;
-            this.profile = profile;
+            counter = currentlyLoggedUser.BirthDateChangesCounter;
+            rootFrame = frame;
+            rootWindow = window;
+            parentWindow = window2;
+
+            if (counter == 3) lb_errorInfo.Content = "Przekroczono dopuszczalną ilość zmiany daty urodzenia.";
+            else
+            {
+                lb_errorInfo.Foreground = Brushes.Black;
+                lb_errorInfo.Content = $"Pozostało {3 - counter} możliwych zmian daty urodzenia.";
+            }
+
         }
 
         private void saveChanges(object sender, RoutedEventArgs e)
         {
-            bool canBeChanged = Validate.BirthDate(dp_birthday, lb_errorInfo);
+            bool canBeChanged = Validate.BirthDate(dp_birthday, lb_errorInfo) && counter < 3;
+
+            if (counter == 3) lb_errorInfo.Content = "Przekroczono dopuszczalną ilość zmiany daty urodzenia.";
 
             if (canBeChanged)
             {
-                Confirm c = new Confirm(currentlyLoggedUser, state, dp_birthday.ToString(), profile);
-                c.Show();
-                this.Close();
+                rootFrame.Content = new ConfirmPage(currentlyLoggedUser, state, dp_birthday.ToString(), rootWindow, parentWindow);
             }
         }
     }

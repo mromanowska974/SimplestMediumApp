@@ -19,18 +19,22 @@ namespace MyLoginPanel
     /// <summary>
     /// Logika interakcji dla klasy ChangePassword.xaml
     /// </summary>
-    public partial class ChangePassword : Window
+    public partial class ChangePassword : Page
     {
         User currentlyLoggedUser;
         string state;
-        Profile profile;
-        public ChangePassword(User user, string state, Profile profile)
+        Frame rootFrame;
+        Window rootWindow;
+        Window parentWindow;
+        public ChangePassword(User user, string state, Frame frame, Window window, Window window2)
         {
             InitializeComponent();
             currentlyLoggedUser = user;
             this.state = state;
             lb_info.Content = "Podaj nowe hasło. Musi mieć min 10 znaków, \njedną wielką literę i jedną cyfrę.";
-            this.profile = profile;
+            rootFrame = frame;
+            rootWindow = window;
+            parentWindow = window2;
         }
 
         private void saveChanges(object sender, RoutedEventArgs e)
@@ -41,9 +45,7 @@ namespace MyLoginPanel
 
             if (canBeChanged)
             {
-                Confirm confirm = new Confirm(currentlyLoggedUser, state, txt_password.Password, profile);
-                confirm.Show();
-                this.Close();
+                rootFrame.Content = new ConfirmPage(currentlyLoggedUser, state, txt_password.Password, rootWindow, parentWindow);
             }
         }
     }

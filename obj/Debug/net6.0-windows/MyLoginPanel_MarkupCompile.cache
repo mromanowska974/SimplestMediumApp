@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\mroma\Documents\Kodowanko\c# i wpf - rekreacyjne\MyLoginPanel\SimplestMediumApp\App.xaml
-101823606568
+13132808804
 
-151715012863
+23-1199313981
 214103547536
-ChangeBirthDate.xaml;ChangeData.xaml;ChangeGender.xaml;ChangePassword.xaml;Confirm.xaml;Login.xaml;MainPage.xaml;MainWindow.xaml;Profile.xaml;Register.xaml;
+ChangeBirthDate.xaml;ChangeData.xaml;ChangeGender.xaml;ChangeLoginOrEmail.xaml;ChangePassword.xaml;ConfirmPage.xaml;HomePage.xaml;LoginPage.xaml;MainLoggedPage.xaml;MainWindow.xaml;RegisterPage.xaml;SettingsPage.xaml;WelcomePage.xaml;
 
 False
 

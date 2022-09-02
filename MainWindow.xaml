@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyLoginPanel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="300"
+        Title="MainWindow" Height="500" Width="500"
         MinHeight="300" MinWidth="300">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -19,47 +20,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0"></Label>
-        <Label Grid.Row="2" Grid.Column="2"></Label>
-
-        <Grid Grid.Row="1" Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Viewbox Grid.Row="0">
-                <Label 
-                    Content="Witaj w serwisie SimplestMedium" 
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                />
-            </Viewbox>
-            <Viewbox Grid.Row="1">
-                <Label 
-                    Content="Masz już konto czy chcesz założyć nowe?" 
-                    HorizontalAlignment="Center" Margin="8,0,0,0" VerticalAlignment="Center" 
-                />
-            </Viewbox>
-            <Viewbox Grid.Row="3">
-                <Button 
-                    x:Name="btn_goToLogin" Content="Mam już konto" 
-                    HorizontalAlignment="Center"  VerticalAlignment="Center" 
-                    Margin="10"
-                    Click="goToLoginWindow"
-                />
-            </Viewbox>
-            <Viewbox Grid.Row="4">
-                <Button 
-                    x:Name="btn_goToRegister" Content="Chcę założyć konto" 
-                    HorizontalAlignment="Center"  VerticalAlignment="Center" 
-                    Margin="15"
-                    Click="goToRegisterWindow"
-                />
-            </Viewbox>
-        </Grid>
-
+        <Frame x:Name="Main" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
